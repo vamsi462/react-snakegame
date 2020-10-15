@@ -30,6 +30,7 @@ export default class App extends Component {
   }
   componentDidUpdate(){
     this.checkIfOutOfBorders();
+    this.checkSelfHit();
     
   }
 
@@ -93,6 +94,17 @@ export default class App extends Component {
   GameOver(){
     alert(`Game is Over.Snake length is ${this.state.snakeDots.length}`);
     this.setState(initialState);
+  }
+
+  checkSelfHit(){
+    let snake =[...this.state.snakeDots];
+    let head  = snake[snake.length-1];
+    snake.pop();
+    snake.forEach(dot=>{
+      if(head[0]===dot[0]&&head[1]===dot[1]){
+        this.GameOver()
+      } 
+    })
   }
   render() {
     return (

@@ -1,0 +1,14 @@
+.game-area {
+  position: relative;
+  margin: 50px auto;
+  width: 600px;
+  height: 450px;
+  border: 2px solid black;
+}
+.snake-dot{
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: black;
+  border: 1px solid #ffffff;
+}

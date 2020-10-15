@@ -4,12 +4,13 @@
   width: 600px;
   height: 450px;
   border: 2px solid black;
+  background-color:black;
 }
 .snake-dot{
   position: absolute;
   width: 2%;
   height: 2%;
-  background-color: black;
+  background-color: green;
   border: 1px solid #ffffff;
   z-index: 2;
 }

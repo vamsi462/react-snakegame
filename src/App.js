@@ -128,7 +128,7 @@ export default class App extends Component {
   }
   //Gameover alert
   GameOver() {
-    alert(`Game is Over.Snake length is ${this.state.snakeDots.length}`);
+    alert(`Your Game is Over`);
     this.setState(initialState);
   }
   render() {

@@ -103,7 +103,10 @@ export default class App extends Component {
   checkIfEatFood() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let food = this.state.food;
-    if (head[0] === food[0] && head[1] === head[1]) {
+    if (head[0] === food[0] && head[1] === food[1]) {
+      this.setState({
+        food:generateRandomCoordinates()
+      })
       this.enlargeSnake();
       this.increaseSpeed()
     }

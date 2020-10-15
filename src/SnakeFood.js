@@ -2,7 +2,7 @@ import React from 'react'
 
 export const SnakeFood = (props) => {
     const style ={
-        left:`${props.dot[0]}%`
+        left:`${props.dot[0]}%`,
          top: `${props.dot[1]}%`
     }
     return (

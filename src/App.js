@@ -14,10 +14,35 @@ const  generateRandomCoordinates =()=>{
 export default class App extends Component {
   state ={
     food:generateRandomCoordinates(),
+    direction: "RIGHT",
     snakeDots:[
       [0,0],
       [2,0] 
-    ]
+    ],
+  }
+
+  componentDidMount(){
+    document.onkeydown= this.onKeyDown
+  }
+
+  onKeyDown=(e)=>{
+    e=e||window.event;
+    switch (e.keyCode) {
+        case 38:
+        this.setState({direction:'UP'})
+        break;
+        case 40:
+        this.setState({direction:'DOWN'})
+        break;
+        case 37:
+        this.setState({direction:'LEFT'})
+        break;
+        case 39:
+        this.setState({direction:'RIGHT'})
+        break;
+        default:
+        break;
+    }
   }
   render() {
     return (

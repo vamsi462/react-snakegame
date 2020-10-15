@@ -9,25 +9,28 @@ const  generateRandomCoordinates =()=>{
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   return [x,y]
 }
-
+const initialState = {
+  food: generateRandomCoordinates(),
+  direction: "RIGHT",
+  speed: 200,
+  snakeDots: [
+    [0, 0],
+    [2, 0],
+  ],
+};
 
 export default class App extends Component {
-  state ={
-    food:generateRandomCoordinates(),
-    direction: "RIGHT",
-    speed:200,
-    snakeDots:[
-      [0,0],
-      [2,0] 
-    ],
-  }
+  state =
+   initialState
+  
 
   componentDidMount(){
     setInterval(this.snakeMove,this.state.speed)
     document.onkeydown= this.onKeyDown
   }
   componentDidUpdate(){
-    this.checkIfOutOfBorders()
+    this.checkIfOutOfBorders();
+    
   }
 
   onKeyDown=(e)=>{
@@ -89,6 +92,7 @@ export default class App extends Component {
   }
   GameOver(){
     alert(`Game is Over.Snake length is ${this.state.snakeDots.length}`);
+    this.setState(initialState);
   }
   render() {
     return (

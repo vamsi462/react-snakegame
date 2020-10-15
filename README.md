@@ -1,6 +1,6 @@
 ### react-snakegame
+##### npm install 
+###### npm start
 
-################ npm install  
-################ npm start
 
-####Demo https://snake-game-999.netlify.app/
+#### Demo https://snake-game-999.netlify.app/

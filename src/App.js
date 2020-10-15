@@ -26,6 +26,9 @@ export default class App extends Component {
     setInterval(this.snakeMove,this.state.speed)
     document.onkeydown= this.onKeyDown
   }
+  componentDidUpdate(){
+    this.checkIfOutOfBorders()
+  }
 
   onKeyDown=(e)=>{
     e=e||window.event;
@@ -74,6 +77,18 @@ export default class App extends Component {
     this.setState({
       snakeDots:dots
     })
+  }
+  //check the snake is crossed the border or not
+  checkIfOutOfBorders(){
+    let head = this.state.snakeDots[this.state.snakeDots.length-1];
+    
+    if(head[0]>=100||head[1]>=100||head[0]<0||head[1]<0){
+      this.GameOver();
+    }
+    
+  }
+  GameOver(){
+    alert(`Game is Over.Snake length is ${this.state.snakeDots.length}`);
   }
   render() {
     return (
